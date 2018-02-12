@@ -60,6 +60,7 @@ int main(int argc, char *argv[]){
         printf("numeros del rango: %ld \n", numbers[counter]);
         trivialityIndex[counter] = getTrivialityIndex(startingPoint);
         //verify the least trivial index
+        //TODO, DELETE this array. Not needed.
         if(trivialityIndex[counter] < trivialityIndex[nonTrivial]){
             nonTrivial = counter;
         }
