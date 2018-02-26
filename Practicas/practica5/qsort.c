@@ -23,7 +23,7 @@ static int compareById(const void *element1, const void *element2){
 static int compareByName(const void *element1, const void *element2){
     Student *student1 = (Student *)element1;
     Student *student2 = (Student *)element2;
-    return strcmp(student1->name, student2->name);
+    return strcmp(student1->name, student2->name); //si quisiera de forma descendente, simplemente regreso el otro.
 }
 
 void sortById(Student *class, int numElements){
