@@ -22,13 +22,12 @@ int main(int argc, char **argv){
             break;
         }
         if(!strcmp(myStudent.firstName, search)){
-            strcpy(myStudent.firstName, update);
+            myStudent.free = 1;
             fseek(data, -1 * sizeof(Student), SEEK_CUR);
             fwrite(&myStudent, sizeof(Student), 1, data);
             break;
         }
     }
     fclose(data);
-
     return 0;
 }
