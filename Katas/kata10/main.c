@@ -11,7 +11,7 @@
 int main(int argc, char *argv[]) {
 
   //limit our input
-  int lenghtOfArray = argc;
+  int lenghtOfArray = argc - 1;
   if(lenghtOfArray > MAX-1){
     printf("Please enter 1000 integers or less. \n");
     return 0;
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
 
   //printf("arraylength: %d\n", i);
   //check if is valid utf-8 encoding
-  int valid = isValidUtf8(x);
+  int valid = isValidUtf8(x, lenghtOfArray);
   if(valid){
     printf("true\n");
   }else{

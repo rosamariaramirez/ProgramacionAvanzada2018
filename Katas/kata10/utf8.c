@@ -4,11 +4,11 @@
 #include "utf8.h"
 
 
-int isValidUtf8(int* numbers){
+int isValidUtf8(int* numbers, int size){
 
-  int i = 0, octets = 0;
+  int octets = 0;
   
-  while(numbers[i] != NULL){
+  for(int i = 0; i < size; i++){
     if(numbers[i] >= 0 && numbers[i] <= 127 && octets == 0){
       octets = 0;
     }else if(numbers[i] >= 128 && numbers[i] <= 191){
@@ -19,15 +19,11 @@ int isValidUtf8(int* numbers){
       octets = 2;
     }else if(numbers[i] >= 240 && numbers[i] <= 247 && octets == 0){
       octets = 3;
+    }else{
+      return 0;
     }
-    i++;
   }
 
-  if(octets != 0){
-    //printf("%d\n", octets);
-    return 0;
-  }else{
-        //printf("%d", octets);
-    return 1;
-  }
+  return !octets;
+
 }

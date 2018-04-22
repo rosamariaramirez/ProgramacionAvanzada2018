@@ -1,1 +1,1 @@
-int isValidUtf8(int* numbers);
+int isValidUtf8(int* numbers, int size);
